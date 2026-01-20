@@ -1,4 +1,5 @@
 // instruction memory
+// Initialized to some assembly programs using the 16-bit ADSD RISC ISA.
 module ROM
   (  
     input   [15:0]   addr,
@@ -10,7 +11,7 @@ module ROM
   
   initial 
     begin
-	 	// PROGRAM 2 --left and right shift continuously
+	 	// PROGRAM 1 --left and right shift continuously
       rom[0]  = 16'b1111_0000_0101_0001;  // addi r0, r5 , 0001  //r5=1, for decrementing r1
       rom[1]  = 16'b1000_0000_1110_xxxx;  // not r14, r0 , xxxx  //r14=0xffff, for LED display 
       rom[2]  = 16'b1111_0000_0010_0111;  // addi r0, r2 , 0111  //r2=111, for LED display 
@@ -60,9 +61,9 @@ module ROM
     end    
   
   assign data_out   = rom[rom_addr];
-  //assign data_out   = (OE) ? rom[rom_addr] : 16'bz;  
   
 endmodule   
+
 
 
 
