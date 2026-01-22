@@ -21,10 +21,10 @@ module adsd_risc_top (input rst, clk, output [7:0] LEDport);
   wire zero, neg, ovf;
   wire clk_slow;
   
-  clk_divider clkdiv(clk, clk_slow);
+  //clk_divider clkdiv(clk, clk_slow);
 
-  adsd_risc_dp dp (.clk(clk_slow), .rst(rst),  //for FPGA, we use ~4 Hz clock so we can see the LED shifting
-  //adsd_risc_dp dp (.clk(clk), .rst(rst),     //for simulation, we use the normal clock
+  //adsd_risc_dp dp (.clk(clk_slow), .rst(rst),  //for FPGA, we use ~4 Hz clock so we can see the LED shifting
+  adsd_risc_dp dp (.clk(clk), .rst(rst),     //for simulation, we use the normal clock
                    .pc_ld					(pc_ld), 
                    .ctrl_branch			(ctrl_branch),
                    .ctrl_jump				(ctrl_jump),
