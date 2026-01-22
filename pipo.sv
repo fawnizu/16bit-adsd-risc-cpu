@@ -6,7 +6,7 @@ module PIPO (output reg 	[15:0] 	dout,
   
   always @(posedge clk)
     if (!rst)
-      dout <= 16'd20;
+      dout <= 16'd0;
     else if (ld) 
       dout <= din;
 
