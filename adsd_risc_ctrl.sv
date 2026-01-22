@@ -1,4 +1,6 @@
-// This is for lab4 exercise.
+// Before coding this controller, go through the microarchitecture
+// to understand which control signals to be activated or deactivated
+// for each instruction.
 module  adsd_risc_ctrl (input rst, 
                         input [3:0] opcode,
                         output reg pc_ld, 
