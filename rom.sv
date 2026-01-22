@@ -1,5 +1,4 @@
 // instruction memory
-// Initialized to some assembly programs using the 16-bit ADSD RISC ISA.
 module ROM
   (  
     input   [15:0]   addr,
@@ -61,9 +60,9 @@ module ROM
     end    
   
   assign data_out   = rom[rom_addr];
+  //assign data_out   = (OE) ? rom[rom_addr] : 16'bz;  
   
 endmodule   
-
 
 
 
